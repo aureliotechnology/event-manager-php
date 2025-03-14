@@ -1,0 +1,159 @@
+{
+    "info": {
+      "name": "Event API Collection",
+      "_postman_id": "e4c9f2f8-1234-4567-89ab-cdef01234567",
+      "description": "Coleção com todas as rotas da API de eventos, incluindo health-check.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Health Check",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/health-check",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8000",
+            "path": [
+              "api",
+              "health-check"
+            ]
+          },
+          "description": "Verifica se a API está ativa e retorna OK."
+        },
+        "response": []
+      },
+      {
+        "name": "Get All Events",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/events",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8000",
+            "path": [
+              "api",
+              "events"
+            ]
+          },
+          "description": "Retorna a lista de todos os eventos."
+        },
+        "response": []
+      },
+      {
+        "name": "Create Event",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"Evento Exemplo\",\n  \"description\": \"Descrição do evento\",\n  \"address\": \"Endereço do evento\",\n  \"mapUrl\": \"https://maps.google.com/?q=Endereço\",\n  \"date\": \"2025-12-31T23:59:59\",\n  \"modality\": \"presencial\",\n  \"cancellationPolicy\": \"Política de cancelamento\",\n  \"participantEditionPolicy\": \"Política para edição de participantes\",\n  \"ticketType\": \"VIP\",\n  \"ticketPrice\": 150.00,\n  \"ticketQuantity\": 200\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/events",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8000",
+            "path": [
+              "api",
+              "events"
+            ]
+          },
+          "description": "Cria um novo evento com os dados informados."
+        },
+        "response": []
+      },
+      {
+        "name": "Get Event by ID",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/events/{{event_id}}",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8000",
+            "path": [
+              "api",
+              "events",
+              "{{event_id}}"
+            ]
+          },
+          "description": "Retorna os detalhes de um evento específico. Substitua {{event_id}} pelo ID real do evento."
+        },
+        "response": []
+      },
+      {
+        "name": "Update Event",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"Evento Atualizado\",\n  \"description\": \"Descrição atualizada do evento\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/events/{{event_id}}",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8000",
+            "path": [
+              "api",
+              "events",
+              "{{event_id}}"
+            ]
+          },
+          "description": "Atualiza os dados de um evento existente. Substitua {{event_id}} pelo ID real do evento."
+        },
+        "response": []
+      },
+      {
+        "name": "Delete Event",
+        "request": {
+          "method": "DELETE",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/events/{{event_id}}",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8000",
+            "path": [
+              "api",
+              "events",
+              "{{event_id}}"
+            ]
+          },
+          "description": "Exclui um evento. Substitua {{event_id}} pelo ID real do evento."
+        },
+        "response": []
+      }
+    ]
+  }
